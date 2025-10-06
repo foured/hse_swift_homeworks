@@ -7,10 +7,10 @@
 
 import Foundation
 
-let field_size = 5
+let field_size = 3
 let cell_height = 5
 
-let num_cells_to_win = field_size
+let num_cells_to_win = 3
 
 let cell_width = (cell_height + 1) * 2
 
@@ -178,7 +178,6 @@ func check_winner() -> Bool {
     return false
 }
 
-
 func start_game(){
     print_field()
     var moving_first = true
@@ -188,6 +187,11 @@ func start_game(){
             if field[i] == " "{
                 free_cells.append(i + 1)
             }
+        }
+        
+        if free_cells.isEmpty{
+            print("Ничья!")
+            break game_loop
         }
         
         if (play_mode == .Coop) || (play_mode == .AI && moving_first){
