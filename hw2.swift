@@ -196,7 +196,7 @@ func start_game(){
         
         if (play_mode == .Coop) || (play_mode == .AI && moving_first){
             print("Ход игрока: \(moving_first ? "1" : "2"). Введите ячейку \(free_cells).");
-            var int_input: Int
+            var int_input: Int = 1
             while true {
                 if let input = readLine(), let num = Int(input), free_cells.contains(num) {
                     int_input = num
